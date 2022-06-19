@@ -1,0 +1,34 @@
+﻿@model ShubhamDhimanWebApp1.Models.StudentData
+@{
+    ViewBag.Title = "StudentDetail";
+}
+
+<div class="card">
+    <div class="card-header text-primary text-lg-center">
+        <h5>Student Detail</h5>
+    </div>
+    <div class="card-body bg-info">
+        
+        <table class="table">
+            <tr>
+                <th>RollNumber</th>
+                <th>Student Name</th>
+                <th>Student Email</th>
+                <th>Course</th>
+                <th>Fees</th>
+            </tr>
+            <tr class="text-white">
+                <td>@Model.RollNumber</td>
+                <td>@Model.Student_Name</td>
+                <td>@Model.StudentEmail</td>
+                <td>@Model.Course</td>
+                <td>@Model.Fees</td>
+            </tr>
+        </table>
+       
+        <div class="card-footer bg-dark text-white font-weight-lighter">
+            <h6>Vishu skill center</h6>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,42 @@
+﻿@model ShubhamDhimanWebApp1.Models.StudentData
+@{
+    ViewData["Title"] = "AddNewStudent";
+}
+<div class="container">
+<div class="row">
+    <div class="col-6 offset-3">
+        <form asp-controller="Studentinfo" asp-action="AddNewStudent" method="post">
+            <div class="form-group">
+                <label asp-for="RollNumber"></label>
+                <input type="number" asp-for="RollNumber" class="form-control" placeholder="Enter Student RollNumber"/>
+                <span asp-validation-for="RollNumber" class="text-danger">@ViewBag.message</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student_Name"></label>
+                <input type="text" asp-for="Student_Name" class="form-control" placeholder="Enter Student Name" />
+                <span asp-validation-for="Student_Name" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentEmail"></label>
+                <input type="email" asp-for="StudentEmail" class="form-control" placeholder="Enter Student Email" />
+                <span asp-validation-for="StudentEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course"></label>
+                <input type="text" asp-for="Course" class="form-control" placeholder="Enter Student Course" />
+                <span asp-validation-for="Course" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fees"></label>
+                <input type="number" min="4500" max="20000" asp-for="Fees" class="form-control" placeholder="Enter Student Fees between 4000 to 20,000." />
+                <span asp-validation-for="Fees" class="text-danger"></span>
+            </div>
+
+            <div class="text-center">
+                <input type="submit" value="submit" class="btn btn-info btn-lg" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>

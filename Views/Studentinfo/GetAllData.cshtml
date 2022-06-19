@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ShubhamDhimanWebApp1.Models.StudentData>
+@{
+    ViewData["Title"] = "GetAllData";
+}
+<div class="container">
+<div class="border mb-1 bg-info">
+    <h2 style="color:darkred;text-align:center">StudentInformation</h2>
+</div>
+<div class="btn btn-outline-info mb-1">
+    <a asp-controller="Studentinfo" asp-action="Create">Create New Student</a>
+</div>
+<table class="table table-striped bg-primary">
+    <tr>
+        <th>RollNumber</th>
+        <th>Student_Name</th>
+        <th>StudentEmail</th>
+        <th>Course</th>
+        <th>Fees</th>
+        <th>Actions[Details/Edit/Delete]</th>
+        
+    </tr>
+   @foreach (var Students in Model)
+    {
+    <tr class="text-white">
+        <td>@Students.RollNumber</td>
+        <td>@Students.Student_Name</td>
+        <td>@Students.StudentEmail</td>
+        <td>@Students.Course</td>
+        <td>@Students.Fees</td>
+        <td>
+            <a asp-controller="Studentinfo" asp-action="StudentDetail" class="btn btn-success" asp-route-id="@Students.ID">Detail</a>
+
+            <a asp-controller="Studentinfo" asp-action="Edit" class="btn btn-secondary" asp-route-id="@Students.ID"
+               onclick="return confirm('Are you sure to edit record ?')">Edit</a>
+
+            <a asp-controller="Studentinfo" asp-action="DeleteStudentInfo" class="btn btn-danger" asp-route-id="@Students.ID" onclick="return confirm('Are you sure to Delete this record?')">Delete</a>
+        </td>
+    </tr>
+    }
+</table>
+<div class="bg-light">
+    <marquee><b> Design and Developed By: Shubham Kumar </b></marquee>
+</div>
+</div>
+
+
